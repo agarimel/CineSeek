@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+chroma_db/
+.env
+.DS_Store
+archive.zip
+movies/*.csv
