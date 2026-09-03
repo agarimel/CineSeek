@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "description": "Hand-labeled semantic movie retrieval evaluation cases for CineSeek.",
+  "cases": [
+    {
+      "id": "inception_dream_heist",
+      "category": "plot_identification",
+      "query": "people enter other people's dreams to steal and implant ideas",
+      "expected_movie_id": "27205",
+      "expected_title": "Inception"
+    },
+    {
+      "id": "inception_subconscious_thief",
+      "category": "paraphrase_robustness",
+      "query": "a skilled thief infiltrates the subconscious and is asked to plant an idea",
+      "expected_movie_id": "27205",
+      "expected_title": "Inception"
+    },
+    {
+      "id": "groundhog_day_time_loop",
+      "category": "plot_identification",
+      "query": "a TV weatherman becomes trapped in a time loop and repeats the same day",
+      "expected_movie_id": "137",
+      "expected_title": "Groundhog Day"
+    },
+    {
+      "id": "groundhog_day_pennsylvania",
+      "category": "keyword_identification",
+      "query": "a weather reporter in Pennsylvania wakes up to the same winter day over and over",
+      "expected_movie_id": "137",
+      "expected_title": "Groundhog Day"
+    },
+    {
+      "id": "interstellar_wormhole",
+      "category": "plot_identification",
+      "query": "astronauts travel through a wormhole and black hole to save humanity",
+      "expected_movie_id": "157336",
+      "expected_title": "Interstellar"
+    },
+    {
+      "id": "interstellar_family_space",
+      "category": "theme_identification",
+      "query": "a father leaves his family to explore space while Earth faces famine",
+      "expected_movie_id": "157336",
+      "expected_title": "Interstellar"
+    },
+    {
+      "id": "lion_king_uncle_throne",
+      "category": "plot_identification",
+      "query": "an animated lion cub whose uncle steals the throne with the help of hyenas",
+      "expected_movie_id": "8587",
+      "expected_title": "The Lion King"
+    },
+    {
+      "id": "lion_king_exile_redemption",
+      "category": "theme_identification",
+      "query": "a young lion loses his father, goes into exile, and returns to reclaim his kingdom",
+      "expected_movie_id": "8587",
+      "expected_title": "The Lion King"
+    },
+    {
+      "id": "toy_story_living_toys",
+      "category": "plot_identification",
+      "query": "a group of toys comes to life when their owner leaves the room",
+      "expected_movie_id": "862",
+      "expected_title": "Toy Story"
+    },
+    {
+      "id": "toy_story_woody_buzz",
+      "category": "character_identification",
+      "query": "a cowboy toy becomes jealous when a new space ranger toy arrives",
+      "expected_movie_id": "862",
+      "expected_title": "Toy Story"
+    },
+    {
+      "id": "jaws_shark_resort",
+      "category": "plot_identification",
+      "query": "a police chief hunts a giant shark terrorizing a seaside resort town",
+      "expected_movie_id": "578",
+      "expected_title": "Jaws"
+    },
+    {
+      "id": "matrix_simulated_reality",
+      "category": "plot_identification",
+      "query": "a computer hacker discovers that human reality is a machine-created simulation",
+      "expected_movie_id": "603",
+      "expected_title": "The Matrix"
+    },
+    {
+      "id": "matrix_red_pill",
+      "category": "keyword_identification",
+      "query": "a hacker takes a red pill and joins a rebellion against intelligent machines",
+      "expected_movie_id": "603",
+      "expected_title": "The Matrix"
+    },
+    {
+      "id": "titanic_ship_romance",
+      "category": "plot_identification",
+      "query": "a young couple from different social classes falls in love aboard a doomed ocean liner",
+      "expected_movie_id": "597",
+      "expected_title": "Titanic"
+    },
+    {
+      "id": "jurassic_park_dinosaurs",
+      "category": "plot_identification",
+      "query": "scientists visit an island theme park where cloned dinosaurs escape",
+      "expected_movie_id": "329",
+      "expected_title": "Jurassic Park"
+    },
+    {
+      "id": "finding_nemo_missing_fish",
+      "category": "plot_identification",
+      "query": "an anxious father fish crosses the ocean to find his missing son",
+      "expected_movie_id": "12",
+      "expected_title": "Finding Nemo"
+    },
+    {
+      "id": "truman_show_fake_world",
+      "category": "plot_identification",
+      "query": "a man slowly realizes his entire life is a television show inside an artificial town",
+      "expected_movie_id": "37165",
+      "expected_title": "The Truman Show"
+    },
+    {
+      "id": "back_to_future_time_car",
+      "category": "plot_identification",
+      "query": "a teenager travels to the past in a time machine built from a car",
+      "expected_movie_id": "105",
+      "expected_title": "Back to the Future"
+    },
+    {
+      "id": "shawshank_prison_friendship",
+      "category": "theme_identification",
+      "query": "two prisoners form a lasting friendship while one quietly plans his escape",
+      "expected_movie_id": "278",
+      "expected_title": "The Shawshank Redemption"
+    },
+    {
+      "id": "dark_knight_joker",
+      "category": "character_identification",
+      "query": "a masked hero in Gotham confronts a criminal mastermind called the Joker",
+      "expected_movie_id": "155",
+      "expected_title": "The Dark Knight"
+    },
+    {
+      "id": "sixth_sense_ghosts",
+      "category": "plot_identification",
+      "query": "a child psychologist helps a boy who says he can see dead people",
+      "expected_movie_id": "745",
+      "expected_title": "The Sixth Sense"
+    },
+    {
+      "id": "godfather_crime_family",
+      "category": "theme_identification",
+      "query": "the reluctant son of a powerful crime family becomes its new leader",
+      "expected_movie_id": "238",
+      "expected_title": "The Godfather"
+    },
+    {
+      "id": "alien_spaceship_creature",
+      "category": "plot_identification",
+      "query": "a spaceship crew is hunted by a deadly extraterrestrial creature",
+      "expected_movie_id": "348",
+      "expected_title": "Alien"
+    },
+    {
+      "id": "terminator_cyborg_future",
+      "category": "plot_identification",
+      "query": "a cyborg assassin travels back in time to kill the mother of a future resistance leader",
+      "expected_movie_id": "218",
+      "expected_title": "The Terminator"
+    },
+    {
+      "id": "et_alien_child",
+      "category": "plot_identification",
+      "query": "a lonely child befriends an alien stranded on Earth and helps it return home",
+      "expected_movie_id": "601",
+      "expected_title": "E.T. the Extra-Terrestrial"
+    },
+    {
+      "id": "silence_lambs_fbi",
+      "category": "plot_identification",
+      "query": "an FBI trainee seeks help from an imprisoned cannibal psychiatrist to catch a killer",
+      "expected_movie_id": "274",
+      "expected_title": "The Silence of the Lambs"
+    }
+  ]
+}

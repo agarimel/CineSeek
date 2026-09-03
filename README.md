@@ -92,9 +92,12 @@ Each indexed document is constructed in `vector_store.py` from the movie's:
 | `test_build_vector_db.py` | Tests movie-ID deduplication. |
 | `test_search_movies.py` | Tests searchable text, Chroma query handling, result normalization, and retrieval behavior. |
 | `test_rag_chat.py` | Tests RAG orchestration and grounding with mocked retrieval and Groq calls. |
+| `evaluation_queries.json` | Hand-labeled movie-description queries and expected movie IDs for retrieval evaluation. |
+| `evaluate_retrieval.py` | Runs the labeled benchmark and reports top-1 and top-k retrieval accuracy. |
+| `test_evaluate_retrieval.py` | Tests evaluation-data validation and metric calculation without running the embedding model. |
 | `requirements.txt` | Lists the current Python dependencies. |
 | `.env.example` | Provides a safe template for local Groq configuration. |
-| `chroma_db/` | Generated local vector database; excluded from Git and created by the build script. |
+| `~/.cineseek/chroma_db/` | Generated local vector database, stored outside the repository and created by the build script. |
 
 Other CSV files are present in `movies/`, but the current pipeline uses `movies_metadata.csv` and `keywords.csv` for indexing and retrieval.
 
@@ -117,7 +120,7 @@ Other CSV files are present in `movies/`, but the current pipeline uses `movies_
 - The `movies/` directory containing `movies_metadata.csv` and `keywords.csv`.
 - A Groq API key for `rag_chat.py`. Semantic search does not require a Groq key.
 
-The raw CSV dataset and generated ChromaDB index are intentionally excluded from Git because of their size. Place `movies_metadata.csv` and `keywords.csv` under `movies/` before building the index.
+The raw CSV dataset and generated ChromaDB index are intentionally excluded from Git because of their size. Place `movies_metadata.csv` and `keywords.csv` under `movies/` before building the index. By default, the index is stored at `~/.cineseek/chroma_db`; set `CINESEEK_CHROMA_PATH` in the shell to override this location.
 
 ### 1. Create and activate a virtual environment
 
@@ -163,12 +166,12 @@ The optional `GROQ_MODEL` variable overrides the default model configured in `gr
 python build_vector_db.py
 ```
 
-The first build downloads the embedding model. The script then embeds movies in batches, prints progress, and persists the collection under `chroma_db/`. Rebuild the database whenever the dataset or indexed text format changes.
+The first build downloads the embedding model. The script then embeds movies in batches, prints progress, and persists the collection under `~/.cineseek/chroma_db/`. Rebuild the database whenever the dataset or indexed text format changes.
 
 To perform a clean rebuild:
 
 ```bash
-rm -rf chroma_db
+rm -rf ~/.cineseek/chroma_db
 python build_vector_db.py
 ```
 
@@ -207,6 +210,28 @@ python -m unittest -v
 ```
 
 The RAG tests mock the LLM call and do not consume Groq API credits.
+
+### 8. Evaluate semantic retrieval
+
+After building `chroma_db`, run the labeled retrieval benchmark:
+
+```bash
+python evaluate_retrieval.py
+```
+
+The report shows the expected movie's rank and similarity for every query, followed by top-1 and top-5 accuracy. To evaluate a different result depth:
+
+```bash
+python evaluate_retrieval.py --top-k 10
+```
+
+On macOS systems that synchronize Desktop through iCloud, keep the virtual environment outside the project directory to prevent package files from being offloaded:
+
+```bash
+python3 -m venv /Users/your-name/.venvs/cineseek
+source /Users/your-name/.venvs/cineseek/bin/activate
+python -m pip install -r requirements.txt
+```
 
 ## Example Queries
 

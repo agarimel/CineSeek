@@ -2,12 +2,18 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).parent
-CHROMA_PATH = PROJECT_ROOT / "chroma_db"
+CHROMA_PATH = Path(
+    os.getenv(
+        "CINESEEK_CHROMA_PATH",
+        Path.home() / ".cineseek" / "chroma_db",
+    )
+).expanduser()
 COLLECTION_NAME = "movies"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
