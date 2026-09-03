@@ -282,7 +282,7 @@ CineSeek is a **fixed RAG pipeline**, not an autonomous agent.
 
 The phases below describe planned work, not current functionality.
 
-### Phase 1 — Retrieval evaluation
+### Phase 1 — Retrieval evaluation ✅
 
 - Create a labeled evaluation dataset of representative queries and expected movies.
 - Measure top-1 and top-5 retrieval accuracy.
